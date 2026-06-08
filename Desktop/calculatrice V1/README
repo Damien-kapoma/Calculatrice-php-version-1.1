@@ -1,0 +1,262 @@
+Calculatrice en ligne de commande PHP
+Description
+
+Ce projet est une calculatrice développée en PHP fonctionnant dans le terminal (CLI). Elle permet à l'utilisateur d'effectuer plusieurs opérations mathématiques sur une série de nombres saisis au clavier.
+
+L'application propose un menu interactif permettant de choisir l'opération souhaitée puis de saisir autant de nombres que nécessaire.
+
+Fonctionnalités
+
+La calculatrice prend en charge les opérations suivantes :
+
+Addition
+Multiplication
+Soustraction
+Division
+Quitter le programme
+Fonctionnement
+Sélection d'une opération
+
+Au démarrage, l'utilisateur voit apparaître un menu :
+
+---- Faites votre choix ----
+1. Addition
+2. Multiplication
+3. Soustraction
+4. Division
+5. Quitter
+
+L'utilisateur doit saisir un nombre correspondant à l'opération souhaitée.
+
+Le programme vérifie la validité du choix. Si celui-ci est incorrect, le menu est réaffiché jusqu'à ce qu'une option valide soit sélectionnée.
+
+Saisie des nombres
+
+Après avoir choisi une opération, l'utilisateur peut saisir plusieurs nombres.
+
+La saisie continue jusqu'à ce que l'utilisateur entre :
+
+=
+
+qui indique la fin de la saisie.
+
+Addition
+
+Le programme additionne tous les nombres saisis par l'utilisateur.
+
+Exemple :
+
+5
+10
+3
+=
+
+Résultat :
+
+18
+Multiplication
+
+Le programme multiplie tous les nombres saisis.
+
+Exemple :
+
+5
+10
+3
+=
+
+Résultat :
+
+150
+Soustraction
+
+Le premier nombre saisi est utilisé comme valeur initiale.
+
+Tous les nombres suivants sont soustraits successivement.
+
+Exemple :
+
+20
+5
+3
+=
+
+Calcul :
+
+20 - 5 - 3
+
+Résultat :
+
+12
+Division
+
+Le premier nombre saisi est utilisé comme valeur initiale.
+
+Tous les nombres suivants servent de diviseurs.
+
+Exemple :
+
+100
+5
+2
+=
+
+Calcul :
+
+100 / 5 / 2
+
+Résultat :
+
+10
+
+Le programme vérifie également qu'aucune division par zéro n'est effectuée.
+
+Quitter
+
+L'option 5 permet de quitter le programme.
+
+Message affiché :
+
+Merci d'avoir utilisé notre calculatrice.
+
+---------------------------------------------------------------------------------------------------
+Concepts PHP utilisés
+
+Ce projet met en pratique plusieurs notions fondamentales du langage PHP :
+
+Variables
+Tableaux (array)
+Structures conditionnelles (if, elseif, else)
+Boucles (while)
+Parcours de tableaux avec foreach
+Conversion de types (int, float)
+Validation des entrées utilisateur
+Manipulation des tableaux avec array_shift()
+-----------------------------------------------------------------------------------------------------
+Auteur
+
+Damien Kapoma Mukangwa
+
+Projet réalisé dans le cadre de l'apprentissage du langage PHP et des structures de contrôle fondamentales.
+
+-----------------------------------------------------------------------------------------------------
+Évolutions prévues
+
+Cette calculatrice constitue la première version (v1) du projet. Plusieurs améliorations sont prévues pour les futures versions afin d'étendre ses fonctionnalités et de renforcer mes compétences en développement PHP.
+
+Version 2
+-------------
+Historique des calculs
+Sauvegarde des opérations effectuées.
+Consultation de l'historique à tout moment.
+Possibilité de supprimer ou d'exporter l'historique.
+Retour automatique au menu
+Après chaque calcul, l'utilisateur pourra choisir de :
+revenir au menu principal ;
+effectuer un nouveau calcul ;
+quitter l'application.
+Version 3
+-----------------
+Résolution d'équations
+
+Ajout de modules permettant de résoudre :
+
+Équations du premier degré
+
+Exemple :
+
+2x + 4 = 10
+
+Résultat :
+
+x = 3
+Équations du second degré
+
+Exemple :
+
+x² - 5x + 6 = 0
+
+Résultat :
+
+x₁ = 2
+x₂ = 3
+Fonctions mathématiques avancées
+Puissances
+Racines carrées
+Valeur absolue
+Logarithmes
+Fonctions trigonométriques (sin, cos, tan)
+Version 4
+---------------------------
+Calcul matriciel
+
+Ajout d'opérations sur les matrices :
+
+Addition de matrices
+Soustraction de matrices
+Multiplication de matrices
+Déterminant
+Transposée
+Inverse de matrice
+
+Exemple :
+
+|1 2|
+|3 4|
+
++
+ 
+|5 6|
+|7 8|
+Version 5
+---------------------
+Interface graphique
+
+Transformation de l'application en calculatrice visuelle :
+
+Boutons numériques
+Boutons d'opérations
+Écran d'affichage
+Historique visuel
+Design moderne
+
+Cette interface pourrait être développée avec :
+
+HTML
+CSS
+JavaScript
+PHP
+Version 6
+-----------------
+Représentation graphique
+
+Ajout d'un module de visualisation permettant :
+
+d'afficher des courbes mathématiques ;
+de représenter graphiquement des fonctions ;
+d'observer les solutions d'équations sur un graphique.
+
+Exemples :
+
+y=x
+2
+y=2x+3
+systèmes d'équations
+Objectif à long terme
+
+Transformer cette calculatrice en un véritable outil mathématique capable de :
+
+effectuer des calculs simples ;
+résoudre des équations ;
+manipuler des matrices ;
+représenter graphiquement des fonctions ;
+conserver un historique des calculs ;
+proposer une interface graphique intuitive.
+
+Ce projet me permettra d'approfondir mes connaissances en :
+
+PHP
+Algorithmes
+Structures de données
+Mathématiques appliquées
+Développement d'interfaces utilisateur
