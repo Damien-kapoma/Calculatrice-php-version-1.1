@@ -3,6 +3,7 @@
 	$nombre = null;
 	$nombres = [];
     $nombres_c = [];
+    $nombres_x = [];
 echo "---- Faites votre choix ----\n";
 echo "1. Addition\n";
 echo "2. Multiplication\n";
@@ -150,18 +151,42 @@ elseif ($choix == 5){
     $choix = (int)readline("entrez votre choix"); }
 
     //logique équation premier degré
-    if ($choix == 1) {
+    // logique équation premier degré
+
+if ($choix == 1) {
 
     echo "Vous avez choisi l'option 1 : le calcul d'une équation du premier degré\n";
-    echo "Forme : ax + c1 + c2 + ... = 0\n";
+    echo "Forme : a1x + a2x + a3x + ... + c1 + c2 + ... = 0\n";
 
-    $x_var = (float) readline("Entrez le coefficient de x : ");
+    $x_var = (float) readline("Entrez le premier coefficient de x : ");
 
     while ($x_var == 0) {
         $x_var = (float) readline("Le coefficient ne peut pas être 0. Réessayez : ");
     }
 
-    $nombres_c = [];
+    // On enregistre le premier coefficient
+    $nombres_x[] = $x_var;
+
+    echo "Pour arrêter la saisie des coefficients, tapez n\n";
+
+    while (true) {
+
+        $x_var = readline("Votre coefficient : ");
+
+        if ($x_var === "n") {
+            break;
+        }
+
+        $nombres_x[] = (float)$x_var;
+    }
+
+    $resultat_x = 0;
+
+    foreach ($nombres_x as $valeur) {
+        $resultat_x += $valeur;
+    }
+
+    echo "--------------------------------------------------\n";
 
     echo "Pour arrêter la saisie des constantes, tapez fin\n";
 
@@ -169,7 +194,7 @@ elseif ($choix == 5){
 
     while ($c_var !== "fin") {
 
-        $nombres_c[] = (float) $c_var;
+        $nombres_c[] = (float)$c_var;
 
         $c_var = readline("Entrez une autre constante : ");
     }
@@ -180,11 +205,12 @@ elseif ($choix == 5){
         $resultat += $valeur;
     }
 
-    $reponse = -$resultat / $x_var;
+    $reponse = -$resultat / $resultat_x;
 
-    echo "La somme des constantes est : $resultat\n";
+    echo "Somme des coefficients : $resultat_x\n";
+    echo "Somme des constantes : $resultat\n";
     echo "La solution de l'équation est : x = $reponse\n";
-    }
+}
     // logique equation premier degre
     
 
@@ -239,6 +265,7 @@ else {
 
 
 //fin logique deuxieme degré
+
 
             
 
