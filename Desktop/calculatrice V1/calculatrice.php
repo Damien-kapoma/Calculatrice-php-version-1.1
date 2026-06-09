@@ -149,7 +149,7 @@ elseif ($choix == 5){
     echo ("vous voulez resoudre \n 1. une équation du premier \n 2. une équation du deuxieme degré \n");
     $choix = (int)readline("entrez votre choix"); }
 
-    //logique equation premier degre
+    //logique équation premier degré
     if ($choix == 1) {
 
     echo "Vous avez choisi l'option 1 : le calcul d'une équation du premier degré\n";
@@ -184,12 +184,67 @@ elseif ($choix == 5){
 
     echo "La somme des constantes est : $resultat\n";
     echo "La solution de l'équation est : x = $reponse\n";
-
+    }
     // logique equation premier degre
+    
+
+
+    //logique deuxieme degre
+    
+         
+    if ($choix == 2){
+        echo "Vous avez choisi l'option 2 : le calcul d'une équation du second degré\n";
+        echo "Forme : ax² + c1 + c2 + ... = 0\n";
+
+    
+
+    $x_var = (float) readline("Entrez le coefficient de x : ");
+
+    while ($x_var == 0) {
+        $x_var = (float) readline("Le coefficient ne peut pas être 0. Réessayez : ");
+    }
+
+    $nombres_c = [];
+
+    echo "Pour arrêter la saisie des constantes, tapez fin\n";
+
+    $c_var = readline("Entrez une constante : ");
+
+    while ($c_var !== "fin") {
+
+        $nombres_c[] = (float) $c_var;
+
+        $c_var = readline("Entrez une autre constante : ");
+    }
+
+    $resultat = 0;
+
+    foreach ($nombres_c as $valeur) {
+        $resultat += $valeur;
+    }
+
+    $reponse = -$resultat / $x_var;
+
+if ($reponse < 0) {
+    echo "La somme des constantes est : $resultat\n";
+    echo "Pas de solution réelle : le résultat sous la racine est négatif.\n";
+} 
+
+else {
+    $reponse = sqrt($reponse);
+    echo "La somme des constantes est : $resultat\n";
+    echo "La solution est : x = $reponse\n";
 }
+    }
+
+
+//fin logique deuxieme degré
+
+            
 
 
 //logiaue Quitter
+
 elseif($choix == 6){
     echo "merci d'avoir utiliser notre calcuatrice";
 }
