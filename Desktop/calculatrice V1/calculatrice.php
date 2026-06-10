@@ -4,6 +4,7 @@
 	$nombres = [];
     $nombres_c = [];
     $nombres_x = [];
+    $nombres_x2 = [];
 echo "---- Faites votre choix ----\n";
 echo "1. Addition\n";
 echo "2. Multiplication\n";
@@ -21,15 +22,18 @@ $choix =(int)readline("Entrez votre choix :");
            $choix !== 5 &&
            $choix !== 6){
 
+        echo "votre choix est invalide \n";
+        echo "----------------------------\n";
         echo "---- Faites votre choix ----\n";
         echo "1. Addition\n";
         echo "2. Multiplication\n";
         echo "3. Soustraction\n";
         echo "4. Division\n";
-        echo "5. Quitter \n";
+        echo "5. Equation mathematique \n";
+        echo "6. quitter \n";
 
         
-        echo "votre choix est invalide \n";
+        
         $choix = (int)readline ("Entrez votre choix :");
     }
 
@@ -147,11 +151,10 @@ elseif ($choix == 1) {
 //logique equation degre 1 et degre 2 
 
 elseif ($choix == 5){
-    echo ("vous voulez resoudre \n 1. une équation du premier \n 2. une équation du deuxieme degré \n");
-    $choix = (int)readline("entrez votre choix"); }
+    echo ("vous voulez resoudre \n 1. une équation du premier degré \n 2. une équation du deuxieme degré \n");
+    $choix = (int)readline("entrez votre choix :"); }
 
     //logique équation premier degré
-    // logique équation premier degré
 
 if ($choix == 1) {
 
@@ -211,7 +214,7 @@ if ($choix == 1) {
     echo "Somme des constantes : $resultat\n";
     echo "La solution de l'équation est : x = $reponse\n";
 }
-    // logique equation premier degre
+    // fin logique equation premier degre
     
 
 
@@ -220,15 +223,48 @@ if ($choix == 1) {
          
     if ($choix == 2){
         echo "Vous avez choisi l'option 2 : le calcul d'une équation du second degré\n";
-        echo "Forme : ax² + c1 + c2 + ... = 0\n";
+        echo "Forme : ax² + bx + c1 + c2 + ... = 0\n";
 
     
 
-    $x_var = (float) readline("Entrez le coefficient de x : ");
 
-    while ($x_var == 0) {
-        $x_var = (float) readline("Le coefficient ne peut pas être 0. Réessayez : ");
+while (true)
+{
+    $x_var2 = (int) readline("Entrez le coefficient de x² (0 pour terminer) : ");
+
+    if ($x_var2 === 0)
+    {
+        break;
     }
+
+    $nombres_x2[] = $x_var2;
+}
+
+$resultat_x2 = 0;
+
+foreach ($nombres_x2 as $valeur)
+{
+    $resultat_x2 += $valeur;
+}
+
+while(true){
+    $x_var = readline ("entrez le deuxieme coefficient X : ");
+
+    if ($x_var === "n"){
+        break;
+    }
+
+    $nombres_x [] = $x_var;
+}
+$resultat_x = 0;
+
+foreach($nombres_x as $valeur){
+    $resultat_x += $valeur;
+}
+
+
+
+    
 
     $nombres_c = [];
 
@@ -249,15 +285,19 @@ if ($choix == 1) {
         $resultat += $valeur;
     }
 
-    $reponse = -$resultat / $x_var;
+    $reponse = -$resultat / $resultat_x2;
 
 if ($reponse < 0) {
+    echo "La somme des coefficients x² est :  $resultat_x2 \n ";
+    echo "La somme des coefficients x est :  $resultat_x \n ";
     echo "La somme des constantes est : $resultat\n";
     echo "Pas de solution réelle : le résultat sous la racine est négatif.\n";
 } 
 
 else {
     $reponse = sqrt($reponse);
+    echo "La somme des coefficients x² est :  $resultat_x \n ";
+    echo "La somme des coefficients x est :  $resultat_x \n ";
     echo "La somme des constantes est : $resultat\n";
     echo "La solution est : x = $reponse\n";
 }
@@ -265,10 +305,6 @@ else {
 
 
 //fin logique deuxieme degré
-
-
-            
-
 
 //logiaue Quitter
 
