@@ -1,6 +1,6 @@
 <?php
 	
-	$nombre = null;
+	$nombre = null; 
 	$nombres = [];
     $nombres_c = [];
     $nombres_x = [];
@@ -311,6 +311,5 @@ else {
 elseif($choix == 6){
     echo "merci d'avoir utiliser notre calcuatrice";
 }
-
 
 ?>
